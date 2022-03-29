@@ -32,6 +32,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -39,103 +44,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.red,
-      appBar: AppBar(title: Text("SECOUND ASIGNMET"),
-      backgroundColor: Colors.purple,
+      appBar: AppBar(
+        title: Text("SECOUND ASIGNMET"),
+        backgroundColor: Colors.purple,
       ),
-      body: const Center(
+      body: Container (child: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+
+        children: [
         
-        child: Text(' '),
-    
-      ),
-      drawer: Drawer(
-        
-        backgroundColor: Color.fromRGBO(221, 144, 169, 1),
-        
-        child: ListView(
-          // Obeisty :2.0,
-          padding: EdgeInsets.zero,
-          
-          children: [
-            
-          const DrawerHeader(
-            
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(221, 144, 169, 1),
-                
-              ),
-              child: Text('  '),
-            ),
-            ListTile(
-              
-              title: const Text('FIRST ELEMENT'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              
-              title: const Text('SECOND ELEMENT'),
-              onTap: () {
-                  Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('THIRD ELEMENT'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('FORTH ELEMENT'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('FIFTHE ELEMENT'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+  
+        Card(
+          child: Center(child: Text('FIRST ELEMENT \nSECOND ELEMENT \nTHIRD ELEMENT \nFORTH ELEMENT \nFIFTHE ELEMENT')),
         ),
+          Card(
+          color: Colors.red,
+          child: Center(child: Text('  ')),
+          
+        ),
+          
+        
+        ]
       ),
-    );
-  }
-}
-
-    
-    
-    
-    
-    
-    
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("SECOUND ASIGNMET"),
-//         backgroundColor: Colors.purple,
-//       ),
-//       body: Drawer(
-//     child: Material ( 
-//       color :Colors.pink,
-//       child: ListView(
-//       // padding: Padding,
-//         children: <Widget>[
-//             const SizedBox(height: 48),
-//               // buildm
-//               buildMenuItem(
-
-//               ),
-
-//         ],
-//       ),
-
-//     ),
-
-//       ) 
-//       );
+      ));
       
-//   }
-// }       
+  }
+}       
 
